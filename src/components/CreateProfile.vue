@@ -38,7 +38,7 @@ const backLink = route.query.backLink || '/enter-code';
                     <Label for="cedula">Cedula</Label>
                 </div>
                 <div class="input-cedula">
-                <input type="text" id="cedula" name="cedula" required>
+                <input type="number" id="cedula" name="cedula" required>
                 </div>
             </div> 
             <div class="container-contrasena">
@@ -46,16 +46,18 @@ const backLink = route.query.backLink || '/enter-code';
                 <Label for="contrasena">Contrasena</Label>
                 </div>
                 <div class="input-contrasena">
-                <input type="text" id="contrasena" name="contrasena" required>
+                <input type="password" id="contrasena" name="contrasena" required>
                 </div>
             </div> 
         </form>
         </div>
+        <RouterLink to="/" class="router-link">
         <div id="button-next">
         <button class="next-button" @click="submitCode">Siguiente
         <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
         </button>
       </div>
+        </RouterLink>
        
 </template>
 
@@ -99,15 +101,22 @@ const backLink = route.query.backLink || '/enter-code';
     font-size: 2.4rem;
     height: 4.5rem;
     width: 12rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     background-color: #ddd;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
 }
+.next-button:hover {
+    background-color: #eee;
+}
 img.next-icon { 
+    margin-top: -1rem;
     width: 3.2rem;
     height: auto;
+}
+.router-link {
+    text-decoration: none;
 }
 
 </style>

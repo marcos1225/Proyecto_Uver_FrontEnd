@@ -17,7 +17,7 @@ export default {
   },
   created() {
     const route = useRoute();
-    this.backLink = route.query.backLink || '/enter-code';
+    this.backLink = route.query.backLink || '/enter-code-login';
   },
   methods: {
     resendCode() {
@@ -44,16 +44,19 @@ export default {
         <input type="password" name="password" id="password" placeholder="Introduce la contraseña">
     </div>
     <div class="button-code">
+      <RouterLink to="/enter-code-login">
       <button @click="resendCode">Enviar codigo</button>
+      </RouterLink>
     </div>
   </div>
-  <RouterLink to="/enter-password" class="link-createprofile"> 
+  
   <div id="button-next">
+    <RouterLink to="/take-trip" class="link-createprofile">
     <button class="next-button" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
-  </div>
   </RouterLink>
+  </div>
 </template>
 
 <style scoped>
@@ -137,7 +140,7 @@ button {
     justify-content: flex-end;
     align-items: flex-end;
     margin-right: 2rem;
-    margin-top: -15rem;
+    margin-top: -22rem;
     height: 28rem;
 }
 .next-button {
@@ -158,5 +161,11 @@ img.next-icon {
 }
 .link-createprofile {
     text-decoration: none;
+}
+@media (min-width: 1024px) {
+    #button-next {
+      margin-top: -29rem;
+      margin-right: 2rem;
+    }
 }
 </style>

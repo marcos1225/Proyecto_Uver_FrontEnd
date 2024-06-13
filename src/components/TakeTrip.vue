@@ -1,5 +1,5 @@
 <script setup>
-
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -19,9 +19,11 @@
             <input type="text" placeholder="Ingresar Destino">
             <img class="icon-navegar" src="../assets/img/navegar.png" alt="">
         </div>
+        <RouterLink to="/confirm-travel">
         <div class="button-buscar">
             <button>Buscar</button>
         </div>
+        </RouterLink>
     </section>
 </div>
 </template>
@@ -70,7 +72,8 @@ h1 {
     height: 40rem;
     background-color: #ddd;
     margin-top: 4rem;
-    border-radius: 4rem;
+    border-top-left-radius: 4rem;
+    border-top-right-radius: 4rem;
 }
 .button-buscar {
     margin-top: 5rem;
@@ -84,7 +87,7 @@ h1 {
     cursor: pointer;
     background-color: white;
 }
-.button-buscar button:active {
+.button-buscar button:hover {
     background-color: black;
     color: white;
 }

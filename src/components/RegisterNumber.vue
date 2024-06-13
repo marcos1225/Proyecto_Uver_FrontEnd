@@ -1,12 +1,15 @@
 <script setup>
+import { computed, defineProps } from 'vue';
 import { useRoute } from 'vue-router';
 import BackBotton from './BackBotton.vue';
 
+const props = defineProps({
+  userlink: String
+});
+
 const route = useRoute();
 
-const userlink = "/enter-code";
-
-const backLink = route.query.backLink || '/register';
+const backLink = computed(() => route.query.backLink || '/register');
 </script>
 
 <template>
@@ -19,7 +22,7 @@ const backLink = route.query.backLink || '/register';
       <input type="number" placeholder="Introducir número de teléfono" required>
     </div>
     <div class="register-button">
-      <RouterLink :to="userlink">
+      <RouterLink :to="props.userlink">
         <button class="continuar-button">Continuar</button>
       </RouterLink>
     </div>
@@ -63,5 +66,7 @@ body {
   font-size: 3.5rem;
   border-radius: 2rem;
   padding: 1rem;
+  cursor: pointer;
 }
 </style>
+

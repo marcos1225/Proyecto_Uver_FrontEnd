@@ -46,12 +46,12 @@ export default {
       <input ref="digit4Input" type="text" v-model="digit4" @input="moveToNext(4)" class="code-input" maxlength="1" id="digit-4" required>
     </div>
     <div class="button-code">
-      <button @click="resendCode">Reenviar</button>
+      <button class="button resend" @click="resendCode">Reenviar</button>
     </div>
   </div>
   <RouterLink to="/create-profile"class="link-createprofile">
   <div id="button-next">
-    <button class="next-button" @click="submitCode">Siguiente
+    <button class="next-button button next" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
   </div>
@@ -83,6 +83,7 @@ h2 {
     font-size: 3.4rem;
     margin-bottom: 2rem;
     font-weight: normal;
+   
 }
 
 .input-container {
@@ -110,17 +111,26 @@ h2 {
     margin-top: 3rem;
 }
 
-button {
+.button {
     background-color: #ddd;
     color: black;
     border: none;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    cursor: pointer;
     margin: 5px;
     font-size: 2rem;
     text-align: center;
     position: relative;
+}
+.resend:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.next:hover {
+    background-color: #EEEEEE;
+    color: black;
+    cursor: pointer;
 }
 
 #button-next {
@@ -148,5 +158,17 @@ img.next-icon {
 }
 .link-createprofile {
     text-decoration: none;
+}
+@media (min-width: 1024px) {
+  
+    h2 {
+      text-align: center;
+        font-size: 4rem;
+        line-height: 1;
+    }
+    #button-next{
+      margin-top: -26rem;
+      margin-right: 4rem;
+    }
 }
 </style>

@@ -9,6 +9,9 @@ import { RouterLink } from 'vue-router';
     </div>
     <div class="Header-icon">
         <div class="Header-icon-user">
+            <RouterLink to="/login"> 
+            <button>Cerrar sesion</button>
+             </RouterLink>
             <img src="../assets/img/usuario.png" alt="">
         </div>
         
@@ -43,6 +46,24 @@ body {
     font-weight: bold;
     margin-left: 2rem; 
     color: black; 
+}
+.Header-icon-user {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.Header-icon-user button {
+    border: none;
+    background-color: #ddd;
+    color: black;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    padding: 1.2rem;
+}
+.Header-icon-user button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 .Header-icon-user img {
     width: 6rem;

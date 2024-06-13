@@ -24,6 +24,12 @@ const router = createRouter({
       name: 'register-number',
       component: () => import('../views/RegisterNumberView.vue')
     },
+    ,
+    {
+      path: '/register-number-login',
+      name: 'register-number-login',
+      component: () => import('../views/LoginNumberView.vue')
+    },
     {
       path: '/enter-code',
       name: 'enter-code',

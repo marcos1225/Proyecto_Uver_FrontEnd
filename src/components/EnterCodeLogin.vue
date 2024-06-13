@@ -1,6 +1,6 @@
 <script>
 import BackBotton from './BackBotton.vue';
-
+import { useRoute } from 'vue-router';
 export default {
   components: {
     BackBotton
@@ -50,17 +50,21 @@ export default {
       <input ref="digit4Input" type="text" v-model="digit4" @input="moveToNext(4)" class="code-input" maxlength="1" id="digit-4" required>
     </div>
     <div class="button-code">
+      <RouterLink to="/enter-password">
         <button @click="insertpassword">Contraseña</button>
+      </RouterLink>
       <button @click="resendCode">Reenviar</button>
     </div>
   </div>
-  <RouterLink to="/enter-code-login" class="link-createprofile">
+  
   <div id="button-next">
+    <RouterLink to="/take-trip" class="link-createprofile">
     <button class="next-button" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
+  </RouterLink>
   </div>
-</RouterLink>
+
 </template>
 
 
@@ -118,11 +122,8 @@ h2 {
 }
 
 .button-code {
-    
-    display: flex;
-    gap: 2rem;
     margin-top: 3rem;
-    margin-left: 4rem;
+    text-align: center;
 }
 
 button {
@@ -163,5 +164,11 @@ img.next-icon {
 }
 .link-createprofile {
     text-decoration: none;
+}
+@media (min-width: 1024px) {
+    #button-next {
+      margin-top: -25rem;
+      margin-right: 4rem;
+    }
 }
 </style>

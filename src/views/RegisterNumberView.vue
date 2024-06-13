@@ -1,8 +1,7 @@
 <template>
-    <RegisterNumber/>
-  </template>
-  
-  <script setup>
-  import RegisterNumber from '@/components/RegisterNumber.vue';
-  </script>
-  
+  <RegisterNumber :userlink="'/enter-code'" />
+</template>
+
+<script setup>
+import RegisterNumber from '@/components/RegisterNumber.vue';
+</script>
