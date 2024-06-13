@@ -45,14 +45,14 @@ export default {
     </div>
     <div class="button-code">
       <RouterLink to="/enter-code-login">
-      <button @click="resendCode">Enviar codigo</button>
+      <button class="code-button button" @click="resendCode">Enviar codigo</button>
       </RouterLink>
     </div>
   </div>
   
   <div id="button-next">
     <RouterLink to="/take-trip" class="link-createprofile">
-    <button class="next-button" @click="submitCode">Siguiente
+    <button class="next-button button" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
   </RouterLink>
@@ -122,13 +122,12 @@ h2 {
     
 }
 
-button {
+.button {
     background-color: #ddd;
     color: black;
     border: none;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    cursor: pointer;
     margin: 5px;
     font-size: 2rem;
     text-align: center;
@@ -150,6 +149,14 @@ button {
     padding-bottom: 2rem;
     font-weight: bold;
     
+}
+.next-button:hover {
+    background-color: #eee;
+}
+.code-button:hover {
+   background-color: black;
+   color: white;
+   cursor: pointer;
 }
 img.next-icon {
     position: absolute;

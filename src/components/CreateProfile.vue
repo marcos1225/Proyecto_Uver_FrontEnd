@@ -51,13 +51,15 @@ const backLink = route.query.backLink || '/enter-code';
             </div> 
         </form>
         </div>
-        <RouterLink to="/" class="router-link">
+       
         <div id="button-next">
+            <RouterLink to="/" class="router-link">
         <button class="next-button" @click="submitCode">Siguiente
         <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
         </button>
+             </RouterLink>
       </div>
-        </RouterLink>
+        
        
 </template>
 

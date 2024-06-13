@@ -49,13 +49,14 @@ export default {
       <button class="button resend" @click="resendCode">Reenviar</button>
     </div>
   </div>
-  <RouterLink to="/create-profile"class="link-createprofile">
+  
   <div id="button-next">
+    <RouterLink to="/create-profile"class="link-createprofile">
     <button class="next-button button next" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
+  </RouterLink>
   </div>
-</RouterLink>
 </template>
 
 
