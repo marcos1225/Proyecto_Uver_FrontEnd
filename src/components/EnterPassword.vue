@@ -147,7 +147,6 @@ h2 {
     height: 4rem;
     width: 12rem;
     padding-bottom: 2rem;
-    font-weight: bold;
     
 }
 .next-button:hover {
