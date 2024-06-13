@@ -16,8 +16,8 @@ export default {
     };
   },
   created() {
-    this.backLink = this.$route.query.backLink || '/register-number';
-    this.context = this.$route.query.context || '/';  // Lee el parámetro de consulta y almacénalo
+    this.backLink = this.$route.query.backLink || '/enter-password';
+    this.context = this.$route.query.context || '/';  
   },
   methods: {
     insertpassword() {
@@ -51,15 +51,15 @@ export default {
     </div>
     <div class="button-code">
       <RouterLink to="/enter-password">
-        <button @click="insertpassword">Contraseña</button>
+        <button class="button-action button" @click="insertpassword">Contraseña</button>
       </RouterLink>
-      <button @click="resendCode">Reenviar</button>
+      <button class="button-action button" @click="resendCode">Reenviar</button>
     </div>
   </div>
   
   <div id="button-next">
     <RouterLink to="/take-trip" class="link-createprofile">
-    <button class="next-button" @click="submitCode">Siguiente
+    <button class="next-button button" @click="submitCode">Siguiente
       <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
     </button>
   </RouterLink>
@@ -104,7 +104,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 .input-container input {
     background-color: #ddd;
@@ -126,17 +126,21 @@ h2 {
     text-align: center;
 }
 
-button {
+.button {
     background-color: #ddd;
     color: black;
     border: none;
     padding: 1rem 2rem;
     border-radius: 1rem;
     cursor: pointer;
-    margin: 5px;
+    margin: 1rem;
     font-size: 2rem;
     text-align: center;
     position: relative;
+}
+.button-action:hover {
+    background-color: black;
+    color: white;
 }
 
 #button-next {
@@ -152,7 +156,9 @@ button {
     height: 4rem;
     width: 12rem;
     padding-bottom: 2rem;
-    
+}
+.next-button:hover {
+    background-color: #eee;
 }
 img.next-icon {
     position: absolute;
@@ -168,7 +174,7 @@ img.next-icon {
 @media (min-width: 1024px) {
     #button-next {
       margin-top: -25rem;
-      margin-right: 4rem;
+      margin-right: 2rem;
     }
 }
 </style>

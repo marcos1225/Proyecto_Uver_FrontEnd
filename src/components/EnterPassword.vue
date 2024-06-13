@@ -95,7 +95,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 .input-container input {
     background-color: #ddd;
