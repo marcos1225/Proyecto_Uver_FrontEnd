@@ -17,7 +17,7 @@ export default {
   },
   created() {
     const route = useRoute();
-    this.backLink = route.query.backLink || '/enter-code-login';
+    this.backLink = route.query.backLink || '/register-number-login';
   },
   methods: {
     resendCode() {

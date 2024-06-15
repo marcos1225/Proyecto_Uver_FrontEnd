@@ -35,11 +35,14 @@ p {
 .boton-atras {
   background-color: inherit;
   border: none;
+  transition: transform 0.3s ease;
 }
 .botton-back {
   height: 7rem;
 }
 .boton-atras:hover {
   cursor: pointer;
+  transform: scale(1.3);
+ 
 }
 </style>
