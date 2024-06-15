@@ -83,6 +83,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
 @media (min-width: 1024px) {
     .container-Bottons {
       width: 79%;

@@ -38,8 +38,8 @@ export default {
 <template>
   <BackBotton :backLink="backLink" />
   <div class="container">
-    <p>Introduce el código de cuatro dígitos que te hemos</p>
-    <p>enviado al número ingresado</p>
+    <p>Introduce el código de cuatro dígitos que te hemos enviado al número ingresado</p>
+
     <div class="input-container">
       <input ref="digit1Input" type="text" v-model="digit1" @input="moveToNext(1)" class="code-input" maxlength="1" id="digit-1" required>
       <input ref="digit2Input" type="text" v-model="digit2" @input="moveToNext(2)" class="code-input" maxlength="1" id="digit-2" required>
@@ -165,7 +165,7 @@ img.next-icon {
   
     p {
       text-align: center;
-        font-size: 3.3rem;
+        font-size: 3rem;
         line-height: 1rem;
     }
     #button-next{
