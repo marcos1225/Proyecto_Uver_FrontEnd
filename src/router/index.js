@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import Info from '@/components/Info.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -64,9 +64,14 @@ const router = createRouter({
       path: '/continue-jorney',
       name: 'continue-jorney',
       component: () => import('../views/ContinueJorneyView.vue')
+    },
+     {
+      path: '/info-user',
+      name: 'info-user',
+      component: Info
+      
     }
 
   ]
 })
-
 export default router

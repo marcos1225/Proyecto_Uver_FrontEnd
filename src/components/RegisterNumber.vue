@@ -50,7 +50,7 @@ const registerPhoneNumber = async () => {
   }
 
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/registrar-numero-celular', {
+    const response = await axios.post('http://127.0.0.1:8000/api/crear-registrar-usuario-pasajero', {
       numero: phoneNumber.value
     });
     Swal.fire({
@@ -84,7 +84,7 @@ const registerPhoneNumber = async () => {
     router.push(props.userlink);
   } catch (error) {
     console.error('Error al registrar el número:', error.response ? error.response.data : error.message);
-    let errorMessage = 'Ya existe un registro con este numero';
+    let errorMessage = 'Ups! Parece que este numero ya esta en uso';
     Swal.fire({
       icon: 'error',
       title: 'Error',

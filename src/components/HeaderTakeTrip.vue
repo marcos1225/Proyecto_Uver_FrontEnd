@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router';
     </div>
     <div class="Header-icon">
         <div class="Header-icon-user">
-            <RouterLink to="/login"> 
+            <RouterLink to="/"> 
             <button>Cerrar sesion</button>
              </RouterLink>
             <img src="../assets/img/usuario.png" alt="">

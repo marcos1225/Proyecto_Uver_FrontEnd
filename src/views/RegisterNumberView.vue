@@ -1,5 +1,5 @@
 <template>
-  <RegisterNumber :userlink="'/enter-code'" />
+  <RegisterNumber :userlink="'/info-user'" />
 </template>
 
 <script setup>

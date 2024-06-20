@@ -61,7 +61,7 @@ const submitCode = async () => {
     Swal.fire({
       icon: 'success',
       title: 'Éxito',
-      text: 'Usuario actualizado exitosamente',
+      text: 'Usuario actualizado, gracias por brindarnos mas información sobre ti, que tengas un buen viaje!',
       customClass: {
         popup: 'swal2-popup-custom',
         title: 'swal2-title-custom',
@@ -86,7 +86,7 @@ const submitCode = async () => {
     });
 
     console.log('Usuario actualizado:', response.data);
-    router.push('/');
+    router.push('/take-trip');
   } catch (error) {
     console.error('Error al actualizar el usuario:', error.response ? error.response.data : error.message);
 
@@ -195,6 +195,7 @@ const submitCode = async () => {
   background-color: #ddd;
   border: 0;
   text-align: center;
+  font-size: 2rem;
 }
 #button-next {
   display: flex;

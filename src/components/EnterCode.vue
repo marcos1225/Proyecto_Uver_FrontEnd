@@ -38,7 +38,7 @@ export default {
 <template>
   <BackBotton :backLink="backLink" />
   <div class="container">
-    <p>Introduce el código de cuatro dígitos que te hemos enviado al número ingresado</p>
+    <p class="title">Introduce el código de cuatro dígitos que te hemos enviado al número ingresado</p>
 
     <div class="input-container">
       <input ref="digit1Input" type="text" v-model="digit1" @input="moveToNext(1)" class="code-input" maxlength="1" id="digit-1" required>
@@ -81,7 +81,7 @@ body {
     margin-top: -1.8rem;
 }
 
-p {
+.tittle{
     font-size: 3.4rem;
     margin-bottom: 2rem;
     font-weight: normal;

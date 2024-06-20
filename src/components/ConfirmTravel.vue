@@ -18,18 +18,24 @@
   </div>
   <div class="container-buttons">
     <button class="cancel-button button">Cancelar</button>
-    <button class="confirm-button button">Aceptar</button>
+    <button class="confirm-button button" @click="saveTrip">Aceptar</button>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import { usePlacesStore } from '../stores/usePlacesStore';
+import { usePhoneStore } from '../stores/usePhoneStore';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const placesStore = usePlacesStore();
+const phoneStore = usePhoneStore();
 const map = ref(null);
 const directionsService = ref(null);
 const directionsRenderer = ref(null);
+
+const DRIVER_PHONE_NUMBER = 63549134;
 
 onMounted(() => {
   const initGoogleServices = () => {
@@ -65,7 +71,6 @@ function drawRoute() {
       return;
     }
 
-    // Agregar marcadores para origen y destino
     const marker = new google.maps.Marker({
       position: origin,
       map: map.value.$mapObject,
@@ -87,7 +92,6 @@ function drawRoute() {
       if (status === google.maps.DirectionsStatus.OK) {
         console.log("Route result:", result);
         directionsRenderer.value.setDirections(result);
-        // Forzar la actualización del mapa
         directionsRenderer.value.setMap(map.value.$mapObject);
       } else {
         console.error('Error al obtener la ruta: ' + status);
@@ -97,8 +101,103 @@ function drawRoute() {
     console.log("Waiting for origin and destination to be set.");
   }
 }
-</script>
 
+function saveTrip() {
+  const origin = placesStore.origin ? `${placesStore.origin.lat}, ${placesStore.origin.lng}` : '';
+  const destination = placesStore.destination ? `${placesStore.destination.lat}, ${placesStore.destination.lng}` : '';
+  const passengerPhoneNumber = parseInt(phoneStore.getPhoneNumber) || 0;
+  const driverPhoneNumber = DRIVER_PHONE_NUMBER;
+  const estado = true;
+
+  if (origin && destination) {
+    const tripData = {
+      numeroPasajero: passengerPhoneNumber,
+      numeroConductor: driverPhoneNumber,
+      UbicacionPasajero: origin,
+      UbicacionDestino: destination,
+      estado: estado
+    };
+
+    console.log('Trip data:', tripData); // Para depuración
+
+    axios.post('http://127.0.0.1:8000/api/viajes', tripData)
+      .then(response => {
+        console.log('Viaje guardado exitosamente:', response.data);
+        Swal.fire({
+          title: 'Éxito',
+          text: 'El viaje se ha guardado exitosamente.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+          didOpen: () => {
+            const popup = Swal.getPopup();
+            popup.style.fontSize = '1.6rem';
+            popup.style.padding = '2rem';
+
+            const title = Swal.getTitle();
+            title.style.fontSize = '2.4rem';
+
+            const content = Swal.getHtmlContainer();
+            content.style.fontSize = '1.8rem';
+
+            const confirmButton = Swal.getConfirmButton();
+            confirmButton.style.fontSize = '1.6rem';
+            confirmButton.style.padding = '1rem 2rem';
+          }
+        }).then(() => {
+          window.location.href = '/';
+        });
+      })
+      .catch(error => {
+        console.error('Error al guardar el viaje:', error);
+        Swal.fire({
+          title: 'Error',
+          text: 'Hubo un error al guardar el viaje.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+          didOpen: () => {
+            const popup = Swal.getPopup();
+            popup.style.fontSize = '1.6rem';
+            popup.style.padding = '2rem';
+
+            const title = Swal.getTitle();
+            title.style.fontSize = '2.4rem';
+
+            const content = Swal.getHtmlContainer();
+            content.style.fontSize = '1.8rem';
+
+            const confirmButton = Swal.getConfirmButton();
+            confirmButton.style.fontSize = '1.6rem';
+            confirmButton.style.padding = '1rem 2rem';
+          }
+        });
+      });
+      
+  } else {
+    console.error('Origin or destination is missing');
+    Swal.fire({
+      title: 'Error',
+      text: 'La ubicación de origen o destino falta.',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+      didOpen: () => {
+        const popup = Swal.getPopup();
+        popup.style.fontSize = '1.6rem';
+        popup.style.padding = '2rem';
+
+        const title = Swal.getTitle();
+        title.style.fontSize = '2.4rem';
+
+        const content = Swal.getHtmlContainer();
+        content.style.fontSize = '1.8rem';
+
+        const confirmButton = Swal.getConfirmButton();
+        confirmButton.style.fontSize = '1.6rem';
+        confirmButton.style.padding = '1rem 2rem';
+      }
+    });
+  }
+}
+</script>
 
 <style scoped>
 .card-available h1 {

@@ -44,14 +44,14 @@ function handleBuscar() {
         ref="map"
         :center="{ lat: 10, lng: 10 }"
         :zoom="7"
-        style="width: 100%; height: 30rem;"
+        style="width: 100%; height: 35rem;"
       ></GMapMap>
     </div>
     <section class="container-info-travel">
       <h1>Realizar Viaje</h1>
       <div class="input-ubication">
         <img class="icon-cuadrado" src="../assets/img/blanco.png" alt="">
-        <input type="text" v-model="input" @input="fetchSuggestions" placeholder="Ingresar Destino">
+        <input type="text" v-model="input" @input="fetchSuggestions" placeholder="A donde quieres ir?">
         <img class="icon-navegar" src="../assets/img/navegar.png" alt="">
         <ul v-if="placesStore.suggestions.length">
           <li v-for="suggestion in placesStore.suggestions" :key="suggestion.place_id" @click="selectSuggestion(suggestion)">
@@ -78,11 +78,10 @@ h1 {
   margin-top: 5rem;
   margin-left: 0.7rem;
   width: 95%;
-  height: 30rem;
+  height: 35rem;
   border: 5px solid #AEBBFF;
 }
 .input-ubication {
-  width: 60rem;
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -94,7 +93,7 @@ h1 {
 .input-ubication input {
   width: 100%;
   border: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -158,8 +157,8 @@ h1 {
     gap: 2rem;
   }
   .container-map {
-    margin-top: 2rem;
-    height: 55rem;
+    margin-top: 7rem;
+  
     margin-right: 0.5rem;
   }
   .container-info-travel {
