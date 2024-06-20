@@ -11,7 +11,7 @@ const route = useRoute();
 const router = useRouter();
 const phoneStore = usePhoneStore();
 
-const backLink = route.query.backLink || '/enter-code';
+const backLink = route.query.backLink || '/info-user';
 const phoneNumber = phoneStore.getPhoneNumber;
 
 const name = ref('');
