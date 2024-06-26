@@ -59,12 +59,14 @@ body {
     font-size: 1.5rem;
     color: white;
     background-color: black;
+    transition: transform 0.3s ease-in-out;
 }
 .Botton:hover {
     border-radius: 2rem;
     color: black;
     background-color: #DDD;
     cursor: pointer;
+    transform: scale(1.1);
 }
 .router-style {
     text-decoration: none;

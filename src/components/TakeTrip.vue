@@ -44,7 +44,7 @@ function handleBuscar() {
         ref="map"
         :center="{ lat: 10, lng: 10 }"
         :zoom="7"
-        style="width: 100%; height: 35rem;"
+        style="width: 100%; height: 42rem;"
       ></GMapMap>
     </div>
     <section class="container-info-travel">
@@ -78,7 +78,7 @@ h1 {
   margin-top: 5rem;
   margin-left: 0.7rem;
   width: 95%;
-  height: 35rem;
+  height: 42rem;
   border: 5px solid #AEBBFF;
 }
 .input-ubication {
@@ -157,9 +157,9 @@ h1 {
     gap: 2rem;
   }
   .container-map {
-    margin-top: 7rem;
-  
+    margin-top: 5rem;
     margin-right: 0.5rem;
+    
   }
   .container-info-travel {
     height: 45rem;
