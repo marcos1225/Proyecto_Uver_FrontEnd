@@ -75,6 +75,7 @@ const router = createRouter({
      path: '/view-trip',
      name: 'view-trip',
      component: () => import('../views/ViewTripView.vue'),
+<<<<<<< HEAD
    },
    {
     path: '/register-license',
@@ -91,6 +92,11 @@ const router = createRouter({
   name: 'trip-management',
   component: () => import('../views/TripManagementView.vue'),
 }
+=======
+
+     
+   }
+>>>>>>> 8ba9b90fd2622d5d403cfad919aff3c7df760abd
 
   ]
 })
