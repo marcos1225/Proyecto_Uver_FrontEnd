@@ -28,9 +28,11 @@ import { usePlacesStore } from '../stores/usePlacesStore';
 import { usePhoneStore } from '../stores/usePhoneStore';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useRouter } from 'vue-router';
 
 const placesStore = usePlacesStore();
 const phoneStore = usePhoneStore();
+const router = useRouter();
 const map = ref(null);
 const directionsService = ref(null);
 const directionsRenderer = ref(null);
@@ -118,11 +120,10 @@ function saveTrip() {
       estado: estado
     };
 
-    console.log('Trip data:', tripData); // Para depuración
-
     axios.post('http://127.0.0.1:8000/api/viajes', tripData)
       .then(response => {
         console.log('Viaje guardado exitosamente:', response.data);
+        localStorage.setItem('tripId', response.data.idViaje); 
         Swal.fire({
           title: 'Éxito',
           text: 'El viaje se ha guardado exitosamente.',
@@ -144,7 +145,7 @@ function saveTrip() {
             confirmButton.style.padding = '1rem 2rem';
           }
         }).then(() => {
-          window.location.href = '/';
+          router.push('/view-trip'); 
         });
       })
       .catch(error => {
@@ -171,7 +172,6 @@ function saveTrip() {
           }
         });
       });
-      
   } else {
     console.error('Origin or destination is missing');
     Swal.fire({

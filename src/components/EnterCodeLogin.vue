@@ -173,7 +173,7 @@ img.next-icon {
 }
 @media (min-width: 1024px) {
     #button-next {
-      margin-top: -25rem;
+      margin-top: -29rem;
       margin-right: 2rem;
     }
 }

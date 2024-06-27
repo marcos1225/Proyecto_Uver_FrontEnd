@@ -79,12 +79,12 @@ const registerPhoneNumber = async () => {
         confirmButton.style.padding = '1rem 2rem';
       }
     });
-    // Guardar el número en el store
+    
     phoneStore.setPhoneNumber(phoneNumber.value);
     router.push(props.userlink);
   } catch (error) {
     console.error('Error al registrar el número:', error.response ? error.response.data : error.message);
-    let errorMessage = 'Ups! Parece que este numero ya esta en uso';
+    let errorMessage = 'Ups! Ocurrio un error al registrar el número.';
     Swal.fire({
       icon: 'error',
       title: 'Error',
@@ -176,5 +176,9 @@ body {
   border-radius: 2rem;
   padding: 1rem;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.register-button button:hover {
+  transform: scale(1.1);
 }
 </style>

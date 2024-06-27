@@ -223,4 +223,12 @@ img.next-icon {
   width: 3.2rem;
   height: auto;
 }
+@media (min-width: 1024px) {
+  .container-form {
+  margin-top: -5rem;
+}
+#button-next {
+  margin-top: -12rem;
+}
+}
 </style>
