@@ -70,7 +70,27 @@ const router = createRouter({
       name: 'info-user',
       component: Info
       
-    }
+    },
+    {
+     path: '/view-trip',
+     name: 'view-trip',
+     component: () => import('../views/ViewTripView.vue'),
+   },
+   {
+    path: '/register-license',
+    name: 'register-license',
+    component: () => import('../views/registerlicenseView.vue'),
+  },
+  {
+   path: '/register-car',
+   name: 'register-car',
+   component: () => import('../views/registerCarView.vue'),
+ },
+ {
+  path: '/trip-management',
+  name: 'trip-management',
+  component: () => import('../views/TripManagementView.vue'),
+}
 
   ]
 })

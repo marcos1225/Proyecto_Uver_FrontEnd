@@ -59,11 +59,13 @@ body {
     font-size: 1.8rem;
     border-radius: 1rem;
     padding: 1.2rem;
+    transition: transform 0.3s ease-in-out; 
 }
 .Header-icon-user button:hover {
     background-color: black;
     color: white;
     cursor: pointer;
+    transform: scale(1.1);
 }
 .Header-icon-user img {
     width: 6rem;
