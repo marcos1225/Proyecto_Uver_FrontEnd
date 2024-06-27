@@ -10,7 +10,7 @@ const route = useRoute();
 const currentHeader = computed(() => {
   if (route.path === '/take-trip' || route.path === '/confirm-travel' || route.path === '/continue-jorney' || route.path === '/view-trip') {
     return HeaderTakeTrip;
-  } else if (route.path === '/enter-code' || route.path === '/enter-code-login' || route.path === '/enter-password' || route.path === '/register-number' || route.path === '/create-profile' || route.path === '/register-number-login' )  {
+  } else if (route.path === '/enter-code' || route.path === '/enter-code-login' || route.path === '/enter-password' || route.path === '/register-number' || route.path === '/create-profile' || route.path === '/register-number-login' || route.path === '/register-car' || route.path === '/register-license')  {
     return HeaderGlobal;
   } else {
     return Header;
