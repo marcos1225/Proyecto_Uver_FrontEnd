@@ -90,6 +90,11 @@ const router = createRouter({
   path: '/trip-management',
   name: 'trip-management',
   component: () => import('../views/TripManagementView.vue'),
+},
+{
+ path: '/search-driver',
+ name: 'search-driver',
+ component: () => import('../views/searchDriverView.vue'),
 }
 
   ]

@@ -3,7 +3,7 @@
       <div class="map-container">
         <GMapMap
           ref="map"
-          :center="{ lat: placesStore.origin?.lat || 10, lng: placesStore.origin?.lng || 10 }"
+          :center="{ lat: 10, lng: -84.2927 } "
           :zoom="14"
           style="width: 100%; height: 39rem;"
         ></GMapMap>

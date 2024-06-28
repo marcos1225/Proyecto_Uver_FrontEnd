@@ -42,8 +42,8 @@ function handleBuscar() {
     <div class="container-map">
       <GMapMap
         ref="map"
-        :center="{ lat: 10, lng: 10 }"
-        :zoom="7"
+        :center="{ lat: 10.62674, lng: -84 }"
+        :zoom="10.2"
         style="width: 100%; height: 42rem;"
       ></GMapMap>
     </div>

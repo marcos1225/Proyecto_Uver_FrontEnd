@@ -145,7 +145,7 @@ function saveTrip() {
             confirmButton.style.padding = '1rem 2rem';
           }
         }).then(() => {
-          router.push('/view-trip'); 
+          router.push('/search-driver'); 
         });
       })
       .catch(error => {
