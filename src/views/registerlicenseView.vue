@@ -1,7 +1,7 @@
 <script setup>
-import registerCar from '@/components/registerLicense.vue';
+import registerLicense from '@/components/registerLicense.vue';
 </script>
 
 <template>
-    <registerCar/>
+    <registerLicense/>
 </template>

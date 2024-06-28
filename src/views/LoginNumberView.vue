@@ -1,7 +1,7 @@
 <template>
-  <RegisterNumber :userlink="'/enter-password'" />
+  <EnterNumberLogin/>
 </template>
 
 <script setup>
-import RegisterNumber from '@/components/RegisterNumber.vue';
+import EnterNumberLogin from '@/components/EnterNumberLogin.vue';
 </script>

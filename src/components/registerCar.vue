@@ -2,7 +2,7 @@
 import { useRoute } from 'vue-router';
 import BackBotton from './BackBotton.vue';
 const route = useRoute();
-const backLink = route.query.backLink || '/info-user';
+const backLink = route.query.backLink || '/enter-password';
 </script>
 
 <template>
@@ -38,9 +38,11 @@ const backLink = route.query.backLink || '/info-user';
       </div>
     </form>
     <div id="button-next">
+      <RouterLink to="/register-license">
       <button class="next-button">Siguiente
         <img src="../assets/img/flecha-correcta.png" alt="" class="next-icon">
       </button>
+    </RouterLink>
     </div>
   </div>
 </template>
