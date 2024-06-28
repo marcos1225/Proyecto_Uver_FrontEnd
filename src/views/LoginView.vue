@@ -1,7 +1,7 @@
 <template>
   <BottonsRegister
     passengerButtonText="Iniciar sesión como pasajero"
-    passengerButtonLink="/register-number-login?backLink=/login"
+    passengerButtonLink="/take-trip"
     driverButtonText="Iniciar sesión como conductor"
     driverButtonLink="/register-number-login?backLink=/login"
   />
